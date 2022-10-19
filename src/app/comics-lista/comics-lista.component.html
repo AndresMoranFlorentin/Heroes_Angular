@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Editorial</th>
+            <th>Cantidad</th>
+            <th>Precio*Unidad</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let comi of comics">
+            <td><img [src]="comi.tapa" [alt]="comi.Titulo" width="150px"></td>
+            <td>{{comi.Titulo}}</td>
+            <td>{{comi.Editorial}}</td>
+            <td *ngIf="comi.Cantidad ==0" class="alert alert-danger">
+                SIN STOCK</td>
+            <td *ngIf="comi.Cantidad !=0">
+                {{comi.Cantidad}}</td>
+            <td>$ {{comi.Precio_Unidad}}</td>
+        </tr>
+
+    </tbody>
+</table>

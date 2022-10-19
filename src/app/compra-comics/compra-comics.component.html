@@ -1,0 +1,49 @@
+<div class="fondo_compra">
+    <div class="row">
+        <div class="col-6">
+            <app-comics-lista></app-comics-lista>
+        </div>
+        <div class="col-4">
+            <table class="table table-dark">
+                <thead>
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                    <th>Cantidad Disponible</th>
+                    <th>Pedidos</th>
+                    <th>clikea para comprar!</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let compra of comics_compra">
+                        <td>{{compra.Titulo | uppercase}}</td>
+                        <td>${{compra.Precio_Unidad}}</td>
+                        <td>{{compra.Cantidad}}</td>
+                        <td>{{compra.Pedidos}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="reducirPedidos(compra)"> menos-</button>
+                            <input type="text" [(ngModel)]="compra.Pedidos" (keyup)="cambiarValor($event,compra)">
+                            <button class="btn btn-danger" (click)="aumentarPedidos(compra)"> mas+</button>
+                            <button class="btn btn-danger" (click)="mostrarPedidos(compra)"> Total?</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>Finaliza Compra</button>
+            <br>
+            <br>
+            <br>
+            <div class="resultado">
+                <h2>Su compra es de un Total de {{precio_total}}</h2>
+                <h3>desea comprarlos?</h3>
+                <div class="form_confirmar_compra">
+                    <input type="radio" value="si" id="defaultCheck2">
+                    <label>Si!</label>
+                    <label></label>
+                    <input type="radio" value="no" id="defaultCheck2">
+                    <label>NO!</label>
+                    <input type="submit">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
