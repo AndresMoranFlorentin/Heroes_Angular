@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Editorial</th>
+            <th>Cantidad</th>
+            <th>Precio*Unidad</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let per of personajes">
+            <td>{{per.nombre}}</td>
+            <td>{{per.definicion}}</td>
+            <td>{{per.poder}}</td>
+            <td>{{per.benigno}}</td>
+            <td>{{per.id}}</td>
+        </tr>
+
+    </tbody>
+</table>

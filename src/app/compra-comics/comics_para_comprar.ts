@@ -1,9 +1,9 @@
-export interface ListaDeCompras{
+export interface Comics{
     Titulo:string;
     Editorial:string;
     Cantidad:number;
-    Precio_Unidad:number;
     Pedidos:number;
+    Precio_Unidad:number;
     tapa:string;
 
 }

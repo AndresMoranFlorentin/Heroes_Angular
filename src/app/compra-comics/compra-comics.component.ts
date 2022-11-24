@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ComicsListaComponent } from '../comics-lista/comics-lista.component';
-import { comics } from '../comics-lista/ListadoComics';
-import { ListaDeCompras } from '../compra-comics/ListaDeCompras';
+import { ComicsListaComponent } from '../lista-heroes/lista-heroes.component';
+import { Comics } from './comics_para_comprar';
 
 import { NgModule } from '@angular/core';
+import { ComprarComicsService } from '../servicio-comics.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./compra-comics.component.scss']
 })
 export class CompraComicsComponent implements OnInit {
-  comics_compra: ListaDeCompras [] = [
+  comics_compra: Comics [] = [
     {
    Titulo:"Guerra Civil",
    Editorial:"Marvel Comic",
@@ -50,36 +51,48 @@ export class CompraComicsComponent implements OnInit {
    }
 ]
   precio_total=3000;
-  constructor() { }
 
- 
+
+
+   constructor(private servicioHistorietas: ComprarComicsService) {
+     
+  }
    
-  
   ngOnInit(): void {
+    console.log(this.servicioHistorietas);
+    this.servicioHistorietas.listaComics.subscribe(data=>{
+      this.comics_compra;
+    })
     this.comics_compra.forEach(comics_compra=>{
       this.precio_total+=comics_compra.Precio_Unidad*comics_compra.Cantidad;
     })
   }
-  reducirPedidos(compra:ListaDeCompras):void{
+  addComic(compra:Comics):void{
+    this.servicioHistorietas.addComicTo(compra);
+    compra.Cantidad-=compra.Pedidos;
+    console.log("el precio de la compra seria: "+compra.Pedidos*compra.Precio_Unidad);
+    compra.Pedidos=0;
+  }
+  reducirPedidos(compra:Comics):void{
   if(compra.Cantidad!=0 ){
     if(compra.Pedidos>0){
    compra.Pedidos--;
     }
   }
   }
-  aumentarPedidos(compra:ListaDeCompras):void{
+  aumentarPedidos(compra:Comics):void{
     if(compra.Pedidos<compra.Cantidad){
      compra.Pedidos++;
     }
     }
-    cambiarValor(event ,compra:ListaDeCompras):void{
+    cambiarValor(event: any ,compra:Comics):void{
       if(compra.Pedidos>compra.Cantidad || compra.Pedidos<0){
-        alert("A ingresado un numero de pedidos demasiado grande debe cambiarlo (>:)");
-        
+        console.log("ha ingresado un numero invalido");
+        compra.Pedidos=0;
       }
-      console.log(compra.Pedidos);
+
       }
-      mostrarPedidos(compra:ListaDeCompras):void{
-        console.log("el total es ; "+compra.Pedidos);
+      mostrarPedidos(compra:Comics):void{
+        alert("el total es ; "+compra.Pedidos);
       }
 }

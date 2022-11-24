@@ -1,12 +1,20 @@
+.table{
+    background-color: rgb(149, 149, 208);
+}
 .resultado{
     background-color: orange;
     text-align: end;
 }
-table{
-    background-color: rgb(53, 187, 46);
-
+.sinComics{
+    background-color: rgb(194, 135, 25);
+}
+.thTabla{
+    background-color: rgb(39, 39, 213);
+    color: black;
+    border-left: 1px solid black;
 }
 .fondo_compra{
-   grid-row: 1;
+    grid-row: 1;
     background-color: aquamarine;
+
 }
