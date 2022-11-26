@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dc-info.component.scss']
 })
 export class DcInfoComponent implements OnInit {
+imagDc="assets/imagenes_portadas/fondoDC.jpg";
 
   constructor() { }
 

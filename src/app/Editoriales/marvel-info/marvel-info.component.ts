@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MarvelInfoComponent implements OnInit {
 
   constructor() { }
-
+  link_img="assets/imagenes_portadas/otrodemarvel.jpg";
   ngOnInit(): void {
   }
 
