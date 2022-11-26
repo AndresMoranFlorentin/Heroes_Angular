@@ -1,3 +1,92 @@
-.table{
-    background-color: rgb(149, 149, 208);
+.th{
+    color:darkturquoise;
+    background-color: black;
+    border: solid 2px red;
+    height: 70px;
+    width: 25%;
+    margin: 4px;
+    
+}
+.titulo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+}
+.tdtd{
+    background-color: rgb(51, 6, 124);
+    border: solid 1px black;
+    height: 100%;
+    width: 25%;
+    color: ghostwhite;
+}
+.tdenemigo{
+    background-color: rgb(124, 2, 2);
+    border: solid 3px black;
+    height: 100%;
+    width: 25%;
+    color: rgb(24, 230, 199);
+
+}
+.tdheroe{
+    background-color: rgb(7, 110, 12);
+    border: solid 3px rgb(0, 0, 0);
+    height: 100%;
+    width: 25%;
+    color: ghostwhite;
+}
+
+.td{
+border:solid 2px blue;
+padding: 2px;
+font-family:cursive;
+background-color: rgb(241, 230, 20);
+}
+
+.tr{
+    background-color: blueviolet;
+    border: solid 3px black;
+}
+.tabla{
+width: 90%;
+background-color: grey;
+height: 100%;
+}
+.fila_tabla{
+    color:black;
+    background-color: yellow;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    border:solid black 2px;
+    margin:0%;
+}
+.input_tex {
+    width: 80%;
+    height: 40px;
+    margin:10px;
+}
+.btn_borrar{
+    box-shadow: 5px 5px 2px gray;
+    border-radius: 12px;
+    color:red;
+    height: 30px;
+    margin-bottom: 15px;
+    border-bottom: blue 4px;
+}
+.espacio_opciones{
+    background-color: green;
+    border:solid black 2px;
+}
+.btn_editar{
+    box-shadow: 5px 5px 2px rgb(36, 180, 96);
+    color:rgb(16, 19, 204);
+    border-radius: 12px;
+    height: 30px;
+    margin-bottom: 15px;
+    border-bottom: blue 4px;
+}
+.btn_agregar{
+    color:black;
+    background-color: rgb(22, 199, 31);
+    border:solid 4px blueviolet;
+    font-size: 20px;
+    margin:10px;
 }

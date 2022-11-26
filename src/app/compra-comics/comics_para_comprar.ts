@@ -1,4 +1,4 @@
-export interface Comics{
+export interface comics_para_comprar{
     Titulo:string;
     Editorial:string;
     Cantidad:number;

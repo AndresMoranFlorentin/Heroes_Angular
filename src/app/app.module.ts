@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { MarvelInfoComponent } from './Editoriales/marvel-info/marvel-info.component';
 import { DcInfoComponent } from './Editoriales/dc-info/dc-info.component';
 import { ComprarComicsService } from './servicio-comics.service';
-import { IntroduccionHeroesComponent } from './introduccion-heroes/introduccion-heroes.component';
-
+import { FormEditarComponent } from './lista-heroes/form-editar/form-editar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +19,14 @@ import { IntroduccionHeroesComponent } from './introduccion-heroes/introduccion-
     CompraComicsComponent,
     MarvelInfoComponent,
     DcInfoComponent,
-    IntroduccionHeroesComponent
+    FormEditarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ComprarComicsService

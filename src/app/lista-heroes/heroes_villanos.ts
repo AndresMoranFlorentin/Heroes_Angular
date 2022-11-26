@@ -1,4 +1,4 @@
-interface HeroesVillanos {
+export interface heroes_villanos {
 
     nombre:string;
     definicion:string;

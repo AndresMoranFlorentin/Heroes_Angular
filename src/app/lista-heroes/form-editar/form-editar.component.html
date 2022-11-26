@@ -1,0 +1,35 @@
+<br>
+<div>
+    <h2>Mediante este formulario puede agregar nuevos personajes:</h2>
+
+    <form (ngSubmit)="crear()" [formGroup]="personaje">
+        <div class="form-inline">
+            <div class="form-group col-md-2">
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="form-control" formControlName="nombre">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Definicion</label>
+                <input type="text" name="definicion" class="form-control" formControlName="definicion">
+            </div>
+        </div>
+        <div class="form-inline col-md-2">
+            <label>Nivel de Poder</label>
+            <input type="number" name="poder" class="form-control" formControlName="poder">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Rol</label>
+            <select name="rol" id="inputState" class="form-control" formControlName="benigno">
+                <option selected>El rol es...</option>
+                <option value="true">Villano</option>
+                <option value="false">Heroe</option>
+
+            </select>
+            <div *ngIf="error==true" class="mensaje_error">
+                Error campos invalidos
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!personaje.valid">Subir</button>
+    </form>
+</div>

@@ -1,6 +1,10 @@
 <div class="fondo_compra">
+    <h1>Sitio de compras:</h1>
+    <br>
     <div class="row">
-        <div class="col-6">
+        <h3>Los comics a la venta :</h3>
+        <br>
+        <div class="col order-1">
             <table class="table">
                 <thead>
                     <th>Imagen</th>
@@ -23,7 +27,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-3">
+        <div class="col order-2">
+            <h2></h2>
             <table class="table table-bordered table-dark">
                 <thead>
                     <th class="thTabla">Titulo </th>
@@ -43,11 +48,23 @@
                             <button class="btn btn-danger" (click)="aumentarPedidos(compra)"> mas+</button>
                         </td>
                         <td>
-                            <button class="btn btn-primary" (click)="addComic(compra)"> Comprar</button>
+                            <button class="btn btn-outline-success" (click)="addComic(compra)"> Comprar</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <div class="col order-5">
+            <div *ngIf="factura_titulo!='' && factura_pedidos>0" class="factura">
+                <h2>Factura:</h2>
+                <h3>Titulo = {{factura_titulo}}</h3>
+                <h3>Precio Total = ${{factura_precio}}</h3>
+                <h3>Pedidos = {{factura_pedidos}}</h3>
+                <h3>De la editorial = {{factura_editorial}}</h3>
+                <br>
+                <button type="button" (click)="visto()"> Entendido </button>
+            </div>
+        </div>
     </div>
+   
 </div>

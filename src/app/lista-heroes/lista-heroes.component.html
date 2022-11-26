@@ -1,22 +1,47 @@
+<h1 class="titulo"> Lea , Compre y introduscaze en el mundo del comic, con este sitio web</h1>
+
+<h3 class="parrafo">Bueno este sitio web busca que el lector tenga un breve panorama de los comics y sus personajes,
+    a traves de la tabla dinamica puede obtener informacion explicativa que le puede interesar, 
+    en otra seccion se encuentra un listado de comics para comprar, y finalmente dos pequeñas secciones 
+    donde en una se habla de la editorial Dc comic y la otra Marvel, en el futuro se podria introducir
+     mas editoriales como la argentina.
+</h3>
+<app-form-editar></app-form-editar>
+<br>
+<h2>En esta Tabla puede informarse de los personajes quienes son y sus comparaciones</h2>
+
+<p>Esta tabla esta hecha con fines colaborativos es decir,
+    quien ingrese a la pagiana puede cargar su contenido,
+    y que el publico lo vea </p>
+<div class="container">
 <table class="table">
     <thead>
         <tr>
-            <th>Imagen</th>
-            <th>Titulo</th>
-            <th>Editorial</th>
-            <th>Cantidad</th>
-            <th>Precio*Unidad</th>
+            <th class="th">Nombre</th>
+            <th class="th">Definicion</th>
+            <th class="th">Nivel de Poder</th>
+            <th class="th">Rol</th>
+            <th class="th">Opciones</th>
 
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let per of personajes">
-            <td>{{per.nombre}}</td>
-            <td>{{per.definicion}}</td>
-            <td>{{per.poder}}</td>
-            <td>{{per.benigno}}</td>
-            <td>{{per.id}}</td>
+            <td class="td">{{per.nombre}}</td>
+            <td class="td">{{per.definicion}}</td>
+            <td class="td">{{per.poder}}</td>
+            <td class="td">
+              {{VillanoOHeroe(per)}}
+            </td>
+            <td class="tdheroe">
+                <button (click)="borrar(per)"class="btn_borrar">Eliminar</button>
+            </td>
+            
         </tr>
 
     </tbody>
 </table>
+<div class="container-fluid">
+    
+</div>
+</div>

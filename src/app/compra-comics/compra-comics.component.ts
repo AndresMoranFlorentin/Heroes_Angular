@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ComicsListaComponent } from '../lista-heroes/lista-heroes.component';
-import { Comics } from './comics_para_comprar';
+import { comics_para_comprar } from './comics_para_comprar';
 
 import { NgModule } from '@angular/core';
 import { ComprarComicsService } from '../servicio-comics.service';
 import { Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-compra-comics',
@@ -13,7 +12,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./compra-comics.component.scss']
 })
 export class CompraComicsComponent implements OnInit {
-  comics_compra: Comics [] = [
+
+  factura_titulo="";
+  factura_editorial="";
+  factura_precio=0;
+  factura_pedidos=0;
+
+  comics_compra: comics_para_comprar [] = [
     {
    Titulo:"Guerra Civil",
    Editorial:"Marvel Comic",
@@ -48,12 +53,54 @@ export class CompraComicsComponent implements OnInit {
     tapa:"assets/imagenes_portadas/jlaVSDarkseid.jpg",
     Pedidos:0
 
+   },
+   {
+    Titulo:"Lobo",
+    Editorial:"DC",
+    Cantidad:0,
+    Precio_Unidad:780,
+    tapa:"assets/imagenes_portadas/lobo.jpg",
+    Pedidos:0
+
+   }
+   ,{
+    Titulo:"Guerra secreta",
+    Editorial:"Marvel",
+    Cantidad:17,
+    Precio_Unidad:4900,
+    tapa:"assets/imagenes_portadas/secretWars.jpg",
+    Pedidos:0
+
+   }
+   ,{
+    Titulo:"Deapool y Cabre vol 1",
+    Editorial:"Marvel",
+    Cantidad:23,
+    Precio_Unidad:3290,
+    tapa:"assets/imagenes_portadas/deadpoolYCable.jpg",
+    Pedidos:0
+
+   }
+   ,{
+    Titulo:"Iron Man Blanco vol 1",
+    Editorial:"Marvel",
+    Cantidad:5,
+    Precio_Unidad:1800,
+    tapa:"assets/imagenes_portadas/ironMan.jpg",
+    Pedidos:0
+
+   }
+   ,{
+    Titulo:"Flash el regreso",
+    Editorial:"DC comic",
+    Cantidad:12,
+    Precio_Unidad:4500,
+    tapa:"assets/imagenes_portadas/flash.jpg",
+    Pedidos:0
+
    }
 ]
   precio_total=3000;
-
-
-
    constructor(private servicioHistorietas: ComprarComicsService) {
      
   }
@@ -67,32 +114,41 @@ export class CompraComicsComponent implements OnInit {
       this.precio_total+=comics_compra.Precio_Unidad*comics_compra.Cantidad;
     })
   }
-  addComic(compra:Comics):void{
+  addComic(compra:comics_para_comprar):void{
     this.servicioHistorietas.addComicTo(compra);
+
+    this.factura_titulo=compra.Titulo;
+    this.factura_editorial=compra.Editorial;
+    this.factura_pedidos=compra.Pedidos;
+    this.factura_precio=compra.Pedidos*compra.Precio_Unidad;
+
     compra.Cantidad-=compra.Pedidos;
-    console.log("el precio de la compra seria: "+compra.Pedidos*compra.Precio_Unidad);
+
     compra.Pedidos=0;
   }
-  reducirPedidos(compra:Comics):void{
+  reducirPedidos(compra:comics_para_comprar):void{
   if(compra.Cantidad!=0 ){
     if(compra.Pedidos>0){
    compra.Pedidos--;
     }
+    }
   }
-  }
-  aumentarPedidos(compra:Comics):void{
+  aumentarPedidos(compra:comics_para_comprar):void{
     if(compra.Pedidos<compra.Cantidad){
      compra.Pedidos++;
     }
     }
-    cambiarValor(event: any ,compra:Comics):void{
+    cambiarValor(event: any ,compra:comics_para_comprar):void{
       if(compra.Pedidos>compra.Cantidad || compra.Pedidos<0){
         console.log("ha ingresado un numero invalido");
         compra.Pedidos=0;
-      }
-
-      }
-      mostrarPedidos(compra:Comics):void{
+        }
+}
+      mostrarPedidos(compra:comics_para_comprar):void{
         alert("el total es ; "+compra.Pedidos);
+      }
+      visto() {
+        this.factura_titulo="";
+        this.factura_pedidos=0;
       }
 }
