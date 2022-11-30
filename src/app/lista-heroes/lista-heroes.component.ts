@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioTablaService } from '../servicio-tabla/servicio-tabla.service';
 import { heroes_villanos} from './heroes_villanos';
+import { FormAddComponent } from './form-add/form-add.component';
 import { CompraComicsComponent } from '../compra-comics/compra-comics.component';
 @Component({
   selector: 'app-comics-lista',
@@ -11,7 +12,6 @@ export class ComicsListaComponent implements OnInit {
 
 
   personajes: heroes_villanos [] = [];
-
    
   constructor(private ServicioHeroes:ServicioTablaService) { }
 

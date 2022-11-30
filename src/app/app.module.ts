@@ -10,27 +10,27 @@ import { FormsModule } from '@angular/forms';
 import { MarvelInfoComponent } from './Editoriales/marvel-info/marvel-info.component';
 import { DcInfoComponent } from './Editoriales/dc-info/dc-info.component';
 import { ComprarComicsService } from './servicio-comics.service';
-import { FormEditarComponent } from './lista-heroes/form-editar/form-editar.component';
+import { FormAddComponent } from './lista-heroes/form-add/form-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [
-    AppComponent,
-    ComicsListaComponent,
-    CompraComicsComponent,
-    MarvelInfoComponent,
-    DcInfoComponent,
-    FormEditarComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    ComprarComicsService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ComicsListaComponent,
+        CompraComicsComponent,
+        MarvelInfoComponent,
+        DcInfoComponent,
+        FormAddComponent
+    ],
+    providers: [
+        ComprarComicsService
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+    ]
 })
 export class AppModule { }

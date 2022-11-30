@@ -4,7 +4,7 @@ import { ComicsListaComponent } from './lista-heroes/lista-heroes.component';
 import { CompraComicsComponent } from './compra-comics/compra-comics.component';
 import { DcInfoComponent } from './Editoriales/dc-info/dc-info.component';
 import { MarvelInfoComponent } from './Editoriales/marvel-info/marvel-info.component';
-import { FormEditarComponent } from './lista-heroes/form-editar/form-editar.component';
+import { FormAddComponent } from './lista-heroes/form-add/form-add.component';
 
 const routes: Routes = [
   { path:"",
@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"La_lista_de_comics",
   component:ComicsListaComponent},
 
-  {path:"formEditar/:id",component:FormEditarComponent},
+  {path:"formEditar",component:FormAddComponent},
 
   {path:"compraComics",
   component:CompraComicsComponent},

@@ -6,7 +6,7 @@
     donde en una se habla de la editorial Dc comic y la otra Marvel, en el futuro se podria introducir
      mas editoriales como la argentina.
 </h3>
-<app-form-editar></app-form-editar>
+<app-form-add></app-form-add>
 <br>
 <h2>En esta Tabla puede informarse de los personajes quienes son y sus comparaciones</h2>
 
@@ -30,8 +30,11 @@
             <td class="td">{{per.nombre}}</td>
             <td class="td">{{per.definicion}}</td>
             <td class="td">{{per.poder}}</td>
-            <td class="td">
-              {{VillanoOHeroe(per)}}
+            <td *ngIf="per.benigno" class="td">
+                Heroe
+            </td>
+            <td *ngIf="!per.benigno" class="td">
+               Villano
             </td>
             <td class="tdheroe">
                 <button (click)="borrar(per)"class="btn_borrar">Eliminar</button>

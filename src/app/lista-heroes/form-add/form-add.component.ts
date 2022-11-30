@@ -2,21 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { ServicioTablaService } from 'src/app/servicio-tabla/servicio-tabla.service';
-import { heroes_villanos } from '../heroes_villanos';
 
 @Component({
-  selector: 'app-form-editar',
-  templateUrl: 'form-editar.component.html',
-  styleUrls: ['form-editar.component.scss']
+  selector: 'app-form-add',
+  templateUrl: 'form-add.component.html',
+  styleUrls: ['form-add.component.scss']
 })
-export class FormEditarComponent implements OnInit {
+export class FormAddComponent implements OnInit {
 
   error=false;
   personaje = new FormGroup({
     nombre: new FormControl('', Validators.required),
     definicion: new FormControl('', Validators.required),
     poder: new FormControl('', [Validators.required, Validators.min(1)]),
-    benigno: new FormControl()
+    benigno: new FormControl('',Validators.required)
   });
 
   constructor(private ServicioHeroes: ServicioTablaService, private router: Router) { }
