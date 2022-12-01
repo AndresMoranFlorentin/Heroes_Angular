@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioTablaService } from '../../servicio-tabla/servicio-tabla.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
-import { ServicioTablaService } from 'src/app/servicio-tabla/servicio-tabla.service';
 
+//import { ServicioTablaService } from '../app/servicio-tabla/servicio-tabla.service';
+
+//src\app\servicio-tabla\servicio-tabla.service.ts
 @Component({
   selector: 'app-form-add',
   templateUrl: 'form-add.component.html',

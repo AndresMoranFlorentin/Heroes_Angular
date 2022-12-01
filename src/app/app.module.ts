@@ -12,6 +12,7 @@ import { DcInfoComponent } from './Editoriales/dc-info/dc-info.component';
 import { ComprarComicsService } from './servicio-comics.service';
 import { FormAddComponent } from './lista-heroes/form-add/form-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ServicioTablaService } from './servicio-tabla/servicio-tabla.service';
 @NgModule({
     declarations: [
         AppComponent,
@@ -20,9 +21,11 @@ import { ReactiveFormsModule } from '@angular/forms';
         MarvelInfoComponent,
         DcInfoComponent,
         FormAddComponent
+       
     ],
     providers: [
-        ComprarComicsService
+        ComprarComicsService,
+        ServicioTablaService
     ],
     bootstrap: [AppComponent],
     imports: [
